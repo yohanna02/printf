@@ -36,7 +36,6 @@ int _printf(const char *format, ...)
 					}
 					break;
 				case '%':
-					/* va_arg(arg_list, int); */
 					write(1, "%%", 1);
 					count++;
 			}
