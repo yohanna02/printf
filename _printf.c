@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arg_list;
-	int i = 0, j, count = 0;
+	int i = 0, count = 0;
 	char c;
 	char *str;
 
@@ -30,11 +30,7 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				str = va_arg(arg_list, char *);
-				for (j = 0; str[j] != '\0'; j++)
-				{
-					write(1, &str[j], 1);
-					count++;
-				}
+				count += print_string(str);
 				break;
 			case '%':
 				write(1, "%%", 1);
