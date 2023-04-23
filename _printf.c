@@ -37,7 +37,8 @@ int _printf(const char *format, ...)
 				count++;
 				break;
 			default:
-				exit(1);
+				write(1, &format[i], 1);
+				count++;
 			}
 		}
 		else
