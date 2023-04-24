@@ -34,10 +34,7 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				str = va_arg(arg_list, char *);
-				for (j = 0; str[j] != '\0'; j++)
-				{
-					count += write(1, &str[j], 1);
-				}
+				count += print_string(str);
 				break;
 			case '%':
 				count += write(1, "%%", 1);
