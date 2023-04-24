@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 /**
  * _printf - Custom printf function
@@ -12,8 +9,7 @@ int _printf(const char *format, ...)
 {
 	va_list arg_list;
 	int i = 0, count = 0;
-	char c;
-	char *str;
+	char *str, c;
 
 	if (format == NULL)
 	{
@@ -46,8 +42,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			write(1, &format[i], 1);
-			count++;
+			count += write(1, &format[i], 1);
 		}
 		i++;
 	}
