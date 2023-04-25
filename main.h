@@ -21,5 +21,6 @@ int (*select_specifier(char specifier))(va_list);
 int print_string(va_list);
 int print_char(va_list);
 int print_percent(va_list);
+int print_number(va_list);
 
 #endif /* _MAIN_H_ */

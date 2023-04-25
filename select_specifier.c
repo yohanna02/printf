@@ -14,6 +14,8 @@ int (*select_specifier(char specifier))(va_list)
 		{'s', print_string},
 		{'c', print_char},
 		{'%', print_percent},
+		{'i', print_number},
+		{'d', print_number},
 		{'\0', NULL}
 	};
 
