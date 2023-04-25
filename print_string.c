@@ -1,17 +1,25 @@
-#include <unistd.h>
+#include "main.h"
+#include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * print_string - prints string
- * @str: string to print
+ * @arg_list: string to print
  * Return: number of printed characters
 */
-int print_string(const char *str)
+int print_string(va_list arg_list)
 {
-	int i = 0;
+	int i = 0, count = 0;
+	char *str = va_arg(arg_list, char *);
 
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	while (str[i])
 	{
-		i += write(1, &str[i], 1);
+		count += _putchar(str[i]);
+		i++;
 	}
-	return (i);
+	return (count);
 }

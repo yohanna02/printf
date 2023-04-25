@@ -11,46 +11,41 @@
 int _printf(const char *format, ...)
 {
 	va_list arg_list;
-	int i = 0, count = 0;
-	char *str, c;
+	int i = 0, j, count = 0;
+	int (*f)(va_list);
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
-
 	va_start(arg_list, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			switch (format[i])
+			f = select_specifier(format[i + 1]);
+			if (f != NULL)
 			{
-			case 'c':
-				c = va_arg(arg_list, int);
-				count += write(1, &c, 1);
-				break;
-			case 's':
-				str = va_arg(arg_list, char *);
-				if (str == NULL)
-				{
-					str = "(null)";
-				}
-				count += print_string(str);
-				break;
-			case '%':
-				count += write(1, "%%", 1);
-				break;
-			default:
-				count += write(1, "%%", 1);
-				count += write(1, &format[i], 1);
+				j += f(arg_list);
+				if (j == -1)
+					return (-1);
+				count += j;
 			}
+			if (f == NULL && format[i + 1] != ' ')
+			{
+				if (format[i + 1] != '\0')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					count = count + 2;
+				}
+				else
+					return (-1);
+			}
+			i++;
 		}
 		else
-		{
-			count += write(1, &format[i], 1);
-		}
+			count += _putchar(format[i]);
 		i++;
 	}
 	va_end(arg_list);

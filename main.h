@@ -8,12 +8,17 @@
  * @specifier: format specifier
  * @f: format specifier function
 */
-typedef struct specifier {
+typedef struct {
 	char specifier;
 	int (*f)(va_list);
 } specifier_t;
 
+int _putchar(char c);
+
 int _printf(const char *format, ...);
-int print_string(const char *str);
+int (*select_specifier(char specifier))(va_list);
+int print_string(va_list);
+int print_char(va_list);
+int print_percent(va_list);
 
 #endif /* _MAIN_H_ */
