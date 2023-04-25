@@ -26,8 +26,7 @@ int _printf(const char *format, ...)
 			f = select_specifier(format[i + 1]);
 			if (f != NULL)
 			{
-				j = 0;
-				j += f(arg_list);
+				j = f(arg_list);
 				if (j == -1)
 					return (-1);
 				count += j;
