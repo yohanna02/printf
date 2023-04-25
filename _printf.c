@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 /**
  * _printf - Custom printf function
@@ -30,6 +33,10 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				str = va_arg(arg_list, char *);
+				if (str == NULL)
+				{
+					str = "(null)";
+				}
 				count += print_string(str);
 				break;
 			case '%':

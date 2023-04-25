@@ -1,11 +1,18 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-#include <limits.h>
-#include <stdio.h>
 #include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+
+/**
+ * struct specifier - specifier structure
+ * @specifier: format specifier
+ * @f: format specifier function
+*/
+typedef struct specifier {
+	char specifier;
+	int (*f)(va_list);
+} specifier_t;
+
 int _printf(const char *format, ...);
 int print_string(const char *str);
 

@@ -11,8 +11,7 @@ int print_string(const char *str)
 
 	while (str[i])
 	{
-		write(1, &str[i], 1);
-		i++;
+		i += write(1, &str[i], 1);
 	}
 	return (i);
 }
