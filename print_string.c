@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * print_string - prints string
@@ -14,7 +15,8 @@ int print_string(va_list arg_list)
 
 	if (str == NULL)
 	{
-		str = "(null)";
+		count = write(1, "(null)", 6);
+		return (count);
 	}
 	while (str[i])
 	{
