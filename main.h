@@ -4,11 +4,12 @@
 #include <stdarg.h>
 
 /**
- * struct specifier - specifier structure
+ * struct spec  - specifier structure
  * @specifier: format specifier
  * @f: format specifier function
 */
-typedef struct {
+typedef struct spec
+{
 	char specifier;
 	int (*f)(va_list);
 } specifier_t;
