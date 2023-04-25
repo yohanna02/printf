@@ -16,6 +16,7 @@ int (*select_specifier(char specifier))(va_list)
 		{'%', print_percent},
 		{'i', print_number},
 		{'d', print_number},
+		{'b', print_binary},
 		{'\0', NULL}
 	};
 
