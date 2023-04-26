@@ -3,6 +3,7 @@
 /**
  * print_integer - prints an integer
  * @n: integer to be printed
+ * Return: number of characters printed
  */
 int print_integer(int n)
 {
@@ -31,6 +32,7 @@ int print_integer(int n)
 /**
  * print_number - prints an integer
  * @arg_list: integer to be printed
+ * Return: number of characters printed
  */
 int print_number(va_list arg_list)
 {
