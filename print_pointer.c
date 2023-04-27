@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * print_pointer - prints the address of a pointer
@@ -16,6 +17,11 @@ int print_pointer(va_list arg_list, char *buffer, int *buffer_index)
 	char hex[15];
 	int i = 0;
 
+	if (p == NULL)
+	{
+		count = _puts("(nil)", buffer, buffer_index);
+		return (count);
+	}
 	count += add_to_buffer(buffer, buffer_index, '0');
 	count += add_to_buffer(buffer, buffer_index, 'x');
 	if (n == 0)
