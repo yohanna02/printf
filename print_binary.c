@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_binary - print number to binary
+ * @arg_list: va argument list
+ * Return: return binary string
+ */
 int print_binary(va_list arg_list)
 {
 	int count = 0, i;
@@ -12,6 +17,6 @@ int print_binary(va_list arg_list)
 		c = (n & (1 << i)) ? '1' : '0';
 		count += _putchar(c);
 	}
-	
+
 	return (count);
 }
