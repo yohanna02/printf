@@ -18,6 +18,7 @@ int (*select_specifier(char specifier))(va_list)
 		{'d', print_number},
 		{'b', print_binary},
 		{'u', print_unsigned_number},
+		{'o', print_octal_number},
 		{'\0', NULL}
 	};
 

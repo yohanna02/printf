@@ -30,11 +30,6 @@ int print_unsigned_number(va_list arg_list)
 
 	n = va_arg(arg_list, unsigned int);
 
-	if (n == 0)
-	{
-		return (-1);
-	}
-
 	count = print_unsigned_integer(n);
 
 	return (count);
