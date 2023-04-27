@@ -6,6 +6,8 @@
 /**
  * _puts - prints a string
  * @str: string to print
+ * @buffer: the buffer to add the string to
+ * @buffer_index: the index of the string
  * Return: number of printed characters
  */
 int _puts(char *str, char *buffer, int *buffer_index)
@@ -22,6 +24,8 @@ int _puts(char *str, char *buffer, int *buffer_index)
 /**
  * print_string - prints string
  * @arg_list: string to print
+ * @buffer: the buffer to add the string to
+ * @buffer_index: the index of the string
  * Return: number of printed characters
 */
 int print_string(va_list arg_list, char *buffer, int *buffer_index)

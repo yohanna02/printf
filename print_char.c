@@ -4,6 +4,8 @@
 /**
  * print_char - print a character
  * @arg_list: arguments
+ * @buffer: the buffer to add the string to
+ * @buffer_index: the index of the string
  * Return: number of characters printed
  */
 int print_char(va_list arg_list, char *buffer, int *buffer_index)

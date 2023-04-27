@@ -3,6 +3,8 @@
 /**
  * print_integer - prints an integer
  * @n: integer to be printed
+ * @buffer: the buffer to add the string to
+ * @buffer_index: the index of the string
  * Return: number of characters printed
  */
 int print_integer(int n, char *buffer, int *buffer_index)
@@ -32,6 +34,8 @@ int print_integer(int n, char *buffer, int *buffer_index)
 /**
  * print_number - prints an integer
  * @arg_list: integer to be printed
+ * @buffer: the buffer to add the string to
+ * @buffer_index: the index of the string
  * Return: number of characters printed
  */
 int print_number(va_list arg_list, char *buffer, int *buffer_index)

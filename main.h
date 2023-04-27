@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 
+#define UNUSED(x) (void)(x)
 #define BUFFER_SIZE 1024
 
 int add_to_buffer(char *buffer, int *buffer_index, char c);
