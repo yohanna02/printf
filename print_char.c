@@ -6,9 +6,11 @@
  * @arg_list: arguments
  * Return: number of characters printed
  */
-int print_char(va_list arg_list)
+int print_char(va_list arg_list, char *buffer, int *buffer_index)
 {
+	int i;
 	char c = va_arg(arg_list, int);
 
-	return (_putchar(c));
+	i = add_to_buffer(buffer, buffer_index, c);
+	return (i);
 }

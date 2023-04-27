@@ -5,7 +5,7 @@
  * @arg_list: va argument list
  * Return: return binary string
  */
-int print_binary(va_list arg_list)
+int print_binary(va_list arg_list, char *buffer, int *buffer_index)
 {
 	int count = 0, i;
 	unsigned int n;
@@ -15,8 +15,7 @@ int print_binary(va_list arg_list)
 	for (i = 31; i >= 0; i--)
 	{
 		c = (n & (1 << i)) ? '1' : '0';
-		count += _putchar(c);
+		count += add_to_buffer(buffer, buffer_index, c);
 	}
-
 	return (count);
 }

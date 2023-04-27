@@ -7,7 +7,7 @@
  * @specifier: the function to select
  * Return: pointer to the selected function
  */
-int (*select_specifier(char specifier))(va_list)
+int (*select_specifier(char specifier))(va_list, char *, int *)
 {
 	int i = 0;
 	specifier_t _specifier[] = {

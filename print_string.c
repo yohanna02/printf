@@ -8,15 +8,14 @@
  * @str: string to print
  * Return: number of printed characters
  */
-int _puts(char *str)
+int _puts(char *str, char *buffer, int *buffer_index)
 {
 	int count = 0, i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		count += _putchar(str[i]);
+		count += add_to_buffer(buffer, buffer_index, str[i]);
 	}
-
 	return (count);
 }
 
@@ -25,19 +24,19 @@ int _puts(char *str)
  * @arg_list: string to print
  * Return: number of printed characters
 */
-int print_string(va_list arg_list)
+int print_string(va_list arg_list, char *buffer, int *buffer_index)
 {
 	int i = 0, count = 0;
 	char *str = va_arg(arg_list, char *);
 
 	if (str == NULL)
 	{
-		count = _puts("(null)");
+		count = _puts("(null)", buffer, buffer_index);
 		return (count);
 	}
 	while (str[i])
 	{
-		count += _putchar(str[i]);
+		count += add_to_buffer(buffer, buffer_index, str[i]);
 		i++;
 	}
 	return (count);
