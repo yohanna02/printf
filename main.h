@@ -24,4 +24,6 @@ int print_percent(va_list);
 int print_number(va_list);
 int print_binary(va_list);
 
+/* void print_binary_reursion(unsigned int n); */
+
 #endif /* _MAIN_H_ */
