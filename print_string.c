@@ -32,7 +32,7 @@ int print_string(va_list arg_list)
 
 	if (str == NULL)
 	{
-		count = _put("(null)");
+		count = _puts("(null)");
 		return (count);
 	}
 	while (str[i])
