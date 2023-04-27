@@ -34,6 +34,7 @@ int print_unsigned_number(va_list, char *, int *);
 int print_octal_number(va_list, char *, int *);
 int print_hex_x(va_list, char *, int *);
 int print_hex_X(va_list, char *, int *);
+int print_pointer(va_list, char *, int *);
 
 /* void print_binary_reursion(unsigned int n); */
 

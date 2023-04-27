@@ -21,6 +21,7 @@ int (*select_specifier(char specifier))(va_list, char *, int *)
 		{'o', print_octal_number},
 		{'x', print_hex_x},
 		{'X', print_hex_X},
+		{'p', print_pointer},
 		{'\0', NULL}
 	};
 
