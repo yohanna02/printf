@@ -17,6 +17,7 @@ int (*select_specifier(char specifier))(va_list)
 		{'i', print_number},
 		{'d', print_number},
 		{'b', print_binary},
+		{'u', print_unsigned_number},
 		{'\0', NULL}
 	};
 
