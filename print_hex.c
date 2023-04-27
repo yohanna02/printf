@@ -45,7 +45,7 @@ int print_hex_x(va_list arg_list)
 }
 
 /**
- * print_hex_x - print hex representation of a number
+ * print_hex_X - print hex representation of a number
  * @arg_list: list of numbers to print
  * Return: number of characters printed
  */
