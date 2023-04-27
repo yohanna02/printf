@@ -17,6 +17,7 @@ typedef struct spec
 int _putchar(char c);
 
 int _printf(const char *format, ...);
+int _puts(char *);
 int (*select_specifier(char specifier))(va_list);
 int print_string(va_list);
 int print_char(va_list);

@@ -4,6 +4,23 @@
 #include <unistd.h>
 
 /**
+ * _puts - prints a string
+ * @str: string to print
+ * Return: number of printed characters
+ */
+int _puts(char *str)
+{
+	int count = 0, i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		count += _putchar(str[i]);
+	}
+
+	return (count);
+}
+
+/**
  * print_string - prints string
  * @arg_list: string to print
  * Return: number of printed characters
@@ -15,7 +32,7 @@ int print_string(va_list arg_list)
 
 	if (str == NULL)
 	{
-		count = write(1, "(null)", 6);
+		count = _put("(null)");
 		return (count);
 	}
 	while (str[i])
